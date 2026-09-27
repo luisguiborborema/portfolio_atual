@@ -7,6 +7,10 @@
   "use strict";
 
   const root = document.documentElement;
+  const isEnglish = root.lang.toLowerCase().startsWith("en");
+  const t = isEnglish
+    ? { openMenu: "Open menu", closeMenu: "Close menu", locale: "en-US" }
+    : { openMenu: "Abrir menu", closeMenu: "Fechar menu", locale: "pt-BR" };
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
@@ -37,7 +41,7 @@
 
   const setMenu = (open) => {
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    toggle.setAttribute("aria-label", open ? t.closeMenu : t.openMenu);
     menu.classList.toggle("is-open", open);
     document.body.style.overflow = open ? "hidden" : "";
   };
@@ -62,7 +66,10 @@
   });
 
   /* ---------- Navegação: link ativo por seção ---------- */
-  const navLinks = [...document.querySelectorAll("[data-nav-link]")];
+  // Só links para seções desta página (as páginas de case também apontam para a inicial)
+  const navLinks = [...document.querySelectorAll("[data-nav-link]")].filter((link) =>
+    link.getAttribute("href").startsWith("#")
+  );
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
@@ -87,7 +94,7 @@
 
   /* ---------- Botão flutuante: some quando o contato já está visível ---------- */
   const waFloat = document.querySelector(".wa-float");
-  const contact = document.getElementById("contato");
+  const contact = document.querySelector("[data-contact]");
 
   if (waFloat && contact) {
     new IntersectionObserver(([entry]) => {
@@ -123,7 +130,7 @@
 
   /* ---------- Contadores animados ---------- */
   const formatNumber = (value, format) =>
-    format === "thousands" ? value.toLocaleString("pt-BR") : String(value);
+    format === "thousands" ? value.toLocaleString(t.locale) : String(value);
 
   const animateCount = (el) => {
     const target = Number(el.dataset.count);
