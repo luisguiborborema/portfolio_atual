@@ -4,13 +4,14 @@
 Uso:  python3 scripts/build_cases.py
 
 Para editar um case, altere o conteúdo em CASES abaixo e rode o script de novo.
-Saída: cases/<slug>.html (português) e en/cases/<slug>.html (inglês).
+Saída: cases/<slug>.html (português), en/cases/<slug>.html (inglês) e sitemap.xml.
 """
 
 from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SITE = "https://guilhermeborborema.com.br"
 
 EMAIL = "gui.borborema.it@gmail.com"
 WHATSAPP = {
@@ -577,6 +578,7 @@ def render_page(case, lang, index):
     home = "../"                                        # página inicial do mesmo idioma
     other_lang = f"../en/cases/{case['slug']}.html" if lang == "pt" else f"../../cases/{case['slug']}.html"
     nxt = CASES[(index + 1) % len(CASES)]
+    own_path = f"/cases/{case['slug']}.html" if lang == "pt" else f"/en/cases/{case['slug']}.html"
     name = display_name(case, lang)
     projects_anchor = t["nav"][3][0]
 
@@ -659,6 +661,16 @@ def render_page(case, lang, index):
   <meta property="og:description" content="{escape(c["lead"])}" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="{t["og_locale"]}" />
+  <link rel="canonical" href="{SITE}{own_path}" />
+  <link rel="alternate" hreflang="pt-BR" href="{SITE}/cases/{case["slug"]}.html" />
+  <link rel="alternate" hreflang="en" href="{SITE}/en/cases/{case["slug"]}.html" />
+  <link rel="alternate" hreflang="x-default" href="{SITE}/cases/{case["slug"]}.html" />
+  <meta property="og:url" content="{SITE}{own_path}" />
+  <meta property="og:site_name" content="Guilherme Borborema" />
+  <meta property="og:image" content="{SITE}/assets/og-{lang}.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="{FAVICON}" />
 
@@ -774,7 +786,30 @@ def render_page(case, lang, index):
 '''
 
 
+def build_sitemap():
+    """sitemap.xml com as páginas iniciais e os cases, ligando PT e EN."""
+    pairs = [("/", "/en/")] + [(f"/cases/{c['slug']}.html", f"/en/cases/{c['slug']}.html") for c in CASES]
+    entries = []
+    for pt, en in pairs:
+        links = (
+            f'    <xhtml:link rel="alternate" hreflang="pt-BR" href="{SITE}{pt}" />\n'
+            f'    <xhtml:link rel="alternate" hreflang="en" href="{SITE}{en}" />\n'
+            f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{pt}" />'
+        )
+        for loc in (pt, en):
+            entries.append(f"  <url>\n    <loc>{SITE}{loc}</loc>\n{links}\n  </url>")
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + "\n".join(entries)
+        + "\n</urlset>\n"
+    )
+    (ROOT / "sitemap.xml").write_text(xml, encoding="utf-8")
+    print("✓ sitemap.xml")
+
+
 def main():
+    build_sitemap()
     for lang, out_dir in (("pt", ROOT / "cases"), ("en", ROOT / "en" / "cases")):
         out_dir.mkdir(parents=True, exist_ok=True)
         for i, case in enumerate(CASES):
