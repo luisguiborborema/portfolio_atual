@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guilherme Borborema — Desenvolvedor</title>
+  <meta name="description" content="Portfólio de Guilherme Borborema, desenvolvedor de agentes de IA, sistemas sob medida e sites de alta conversão." />
+  <meta name="theme-color" content="#07080c" />
+
+  <meta property="og:title" content="Guilherme Borborema — Desenvolvedor" />
+  <meta property="og:description" content="Agentes de IA, sistemas sob medida e sites de alta conversão." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307080c'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23c8ff4d'%3EGB%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Fundo decorativo -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-lines"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Navegação -->
+  <header class="nav" data-nav>
+    <div class="nav__inner container">
+      <a href="#inicio" class="nav__logo" aria-label="Guilherme Borborema — início">
+        <span class="nav__logo-mark">GB</span>
+        <span class="nav__logo-text">Guilherme Borborema</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu" data-nav-toggle>
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Principal">
+        <ul class="nav__links">
+          <li><a href="#inicio" class="nav__link" data-nav-link>Início</a></li>
+          <li><a href="#sobre" class="nav__link" data-nav-link>Sobre</a></li>
+          <li><a href="#servicos" class="nav__link" data-nav-link>Serviços</a></li>
+          <li><a href="#projetos" class="nav__link" data-nav-link>Projetos</a></li>
+          <li><a href="#contato" class="nav__link" data-nav-link>Contato</a></li>
+        </ul>
+        <a href="#contato" class="btn btn--primary btn--sm nav__cta">Vamos conversar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero container" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="eyebrow reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          Disponível para novos projetos
+        </p>
+
+        <h1 class="hero__title reveal" id="hero-title">
+          <span class="hero__hello">Olá, eu sou</span>
+          <span class="gradient-text">Guilherme Borborema</span>
+        </h1>
+
+        <p class="hero__lead reveal">
+          <strong>Desenvolvedor</strong> que transforma ideias em produtos digitais que geram resultado —
+          de <em>agentes de IA</em> que vendem sozinhos a <em>sistemas sob medida</em> e sites feitos para converter.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a href="#projetos" class="btn btn--primary magnetic">
+            Ver projetos
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/guilherme-borborema/" target="_blank" rel="noopener noreferrer" class="btn btn--glass magnetic">
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/guilherme_borborema/" target="_blank" rel="noopener noreferrer" class="btn btn--glass magnetic">
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Cartão de código -->
+      <div class="hero__visual reveal" aria-hidden="true">
+        <div class="code-card glass" data-tilt>
+          <div class="code-card__bar">
+            <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+            <span class="code-card__file">guilherme.js</span>
+          </div>
+          <pre class="code-card__body"><code><span class="tk-k">const</span> <span class="tk-v">guilherme</span> = {
+  <span class="tk-p">cargo</span>: <span class="tk-s">'Desenvolvedor'</span>,
+  <span class="tk-p">foco</span>: [
+    <span class="tk-s">'Agentes de IA'</span>,
+    <span class="tk-s">'Sistemas sob medida'</span>,
+    <span class="tk-s">'Sites que convertem'</span>,
+  ],
+  <span class="tk-p">projetosEntregues</span>: <span class="tk-n">9</span>,
+  <span class="tk-p">automacoes</span>: <span class="tk-n">100</span>,
+  <span class="tk-p">disponivel</span>: <span class="tk-k">true</span>,
+  <span class="tk-p">contato</span>: <span class="tk-s">'gui.borborema.it@gmail.com'</span>,
+};
+
+<span class="tk-v">guilherme</span>.<span class="tk-f">construir</span>(<span class="tk-s">'seu projeto'</span>);<span class="caret"></span></code></pre>
+        </div>
+
+        <div class="float-chip float-chip--1 glass">
+          <span class="float-chip__value">+3.000</span>
+          <span class="float-chip__label">conversas por IA</span>
+        </div>
+        <div class="float-chip float-chip--2 glass">
+          <span class="float-chip__value">R$ 30 mil</span>
+          <span class="float-chip__label">em vendas geradas</span>
+        </div>
+      </div>
+
+      <!-- Números -->
+      <ul class="stats reveal" aria-label="Resultados em números">
+        <li class="stat">
+          <span class="stat__value"><span data-count="9">9</span></span>
+          <span class="stat__label">projetos entregues</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value">+<span data-count="3000" data-format="thousands">3.000</span></span>
+          <span class="stat__label">conversas conduzidas por IA</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value">+<span data-count="150">150</span></span>
+          <span class="stat__label">reuniões agendadas</span>
+        </li>
+        <li class="stat">
+          <span class="stat__value">+<span data-count="100">100</span></span>
+          <span class="stat__label">fluxos automatizados</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Faixa de especialidades -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Agentes de IA</span><i>✦</i>
+        <span>Sistemas sob medida</span><i>✦</i>
+        <span>CRM</span><i>✦</i>
+        <span>Landing pages</span><i>✦</i>
+        <span>E-commerce</span><i>✦</i>
+        <span>Automação</span><i>✦</i>
+        <span>Sites institucionais</span><i>✦</i>
+        <span>Agentes de IA</span><i>✦</i>
+        <span>Sistemas sob medida</span><i>✦</i>
+        <span>CRM</span><i>✦</i>
+        <span>Landing pages</span><i>✦</i>
+        <span>E-commerce</span><i>✦</i>
+        <span>Automação</span><i>✦</i>
+        <span>Sites institucionais</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section class="section container about" id="sobre" aria-labelledby="sobre-title">
+      <div class="about__photos reveal">
+        <figure class="photo photo--main glass">
+          <img src="assets/fotos/guilherme-1.jpg" alt="Foto de Guilherme Borborema" loading="lazy" data-photo />
+          <figcaption class="photo__placeholder" aria-hidden="true"><span>GB</span><small>assets/fotos/guilherme-1.jpg</small></figcaption>
+        </figure>
+        <figure class="photo photo--sm photo--a glass">
+          <img src="assets/fotos/guilherme-2.jpg" alt="Guilherme Borborema apresentando um projeto em reunião" loading="lazy" data-photo />
+          <figcaption class="photo__placeholder" aria-hidden="true"><small>guilherme-2.jpg</small></figcaption>
+        </figure>
+        <figure class="photo photo--sm photo--b glass">
+          <img src="assets/fotos/guilherme-3.jpg" alt="Guilherme Borborema em viagem a Santiago, no Chile" loading="lazy" data-photo />
+          <figcaption class="photo__placeholder" aria-hidden="true"><small>guilherme-3.jpg</small></figcaption>
+        </figure>
+        <span class="about__badge glass" aria-hidden="true">
+          <span class="status-dot"></span> Espírito Santo · Brasil
+        </span>
+      </div>
+
+      <div class="about__content">
+        <p class="section__kicker reveal">01 — Sobre mim</p>
+        <h2 class="section__title reveal" id="sobre-title">Código a serviço de <span class="gradient-text">negócios reais</span>.</h2>
+        <p class="about__text reveal">
+          Sou o Guilherme, desenvolvedor. Gosto de entender o problema antes de escrever a primeira linha de código:
+          como o cliente vende, onde a operação trava e o que faria diferença no fim do mês.
+        </p>
+        <p class="about__text reveal">
+          A partir disso, construo a solução que faz sentido — um agente de IA que atende e qualifica leads,
+          um sistema que tira a empresa das planilhas ou um site pensado para converter visitas em clientes.
+        </p>
+        <ul class="about__facts reveal">
+          <li><strong>9</strong><span>projetos entregues</span></li>
+          <li><strong>+100</strong><span>automações criadas</span></li>
+          <li><strong>100%</strong><span>sob medida</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section container" id="servicos" aria-labelledby="servicos-title">
+      <header class="section__header">
+        <p class="section__kicker reveal">02 — O que eu faço</p>
+        <h2 class="section__title reveal" id="servicos-title">Tecnologia com um único objetivo: <span class="gradient-text">resultado</span>.</h2>
+      </header>
+
+      <div class="services">
+        <article class="service glass reveal spotlight">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+          </div>
+          <h3 class="service__title">Agentes de IA</h3>
+          <p class="service__text">Pré-vendedores digitais que conversam, qualificam, recuperam clientes e agendam reuniões — 24 horas por dia.</p>
+        </article>
+
+        <article class="service glass reveal spotlight">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          </div>
+          <h3 class="service__title">Sistemas sob medida</h3>
+          <p class="service__text">CRMs e plataformas de gestão que automatizam contratos, finanças e operação — sem depender de planilhas.</p>
+        </article>
+
+        <article class="service glass reveal spotlight">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01M7 14l3 2-3 2M13 18h4"/></svg>
+          </div>
+          <h3 class="service__title">Sites &amp; Landing pages</h3>
+          <p class="service__text">Sites institucionais, e-commerces e landing pages rápidos, bonitos e pensados para transformar visitas em clientes.</p>
+        </article>
+      </div>
+      <article class="automation glass reveal spotlight" aria-labelledby="automacao-title">
+        <div class="automation__number">
+          <span class="automation__value">+<span data-count="100">100</span></span>
+          <span class="automation__caption">fluxos automatizados entregues</span>
+        </div>
+        <div class="automation__content">
+          <span class="tag automation__tag">Automação de processos</span>
+          <h3 class="automation__title" id="automacao-title">Menos trabalho manual, mais tempo para o que importa.</h3>
+          <ul class="automation__list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Mais de 100 fluxos automatizados criados</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Eliminação de tarefas manuais repetitivas</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Economia de centenas de horas de trabalho mensal</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Integração entre múltiplos sistemas e APIs</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="section container" id="projetos" aria-labelledby="projetos-title">
+      <header class="section__header section__header--split">
+        <div>
+          <p class="section__kicker reveal">03 — Cases</p>
+          <h2 class="section__title reveal" id="projetos-title">Projetos que <span class="gradient-text">saíram do papel</span>.</h2>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Filtrar projetos">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" class="filter" data-filter="ia" aria-pressed="false">IA</button>
+          <button type="button" class="filter" data-filter="sistema" aria-pressed="false">Sistemas</button>
+          <button type="button" class="filter" data-filter="site" aria-pressed="false">Sites</button>
+        </div>
+      </header>
+
+      <div class="projects" data-projects>
+
+        <!-- 1. Agente de IA SDR -->
+        <article class="project project--wide glass reveal spotlight" data-category="ia" style="--hue: 88">
+          <a class="project__link" href="https://gotech-one.vercel.app/cases/agente-ia-sdr" target="_blank" rel="noopener noreferrer" aria-label="Ver case: Agente de IA SDR (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>gotech / agente-ia-sdr</em></div>
+            <span class="project__mono">SDR</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Inteligência Artificial</span>
+              <span class="project__index">01</span>
+            </div>
+            <h3 class="project__title">Agente de IA SDR</h3>
+            <p class="project__text">Um agente de inteligência artificial que atua como pré-vendedor: conversa com contatos, qualifica, recupera clientes descartados e agenda reuniões sozinho.</p>
+            <ul class="metrics" aria-label="Resultados">
+              <li><strong>+3.000</strong><span>conversas</span></li>
+              <li><strong>+150</strong><span>reuniões agendadas</span></li>
+              <li><strong>R$ 30 mil</strong><span>em vendas diretas</span></li>
+            </ul>
+            <span class="project__cta">Ver case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 2. BNEX -->
+        <article class="project glass reveal spotlight" data-category="site" style="--hue: 200">
+          <a class="project__link" href="https://gotech-one.vercel.app/cases/bnex" target="_blank" rel="noopener noreferrer" aria-label="Ver case: BNEX (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>gotech / bnex</em></div>
+            <img class="project__logo" src="assets/logos/bnex.svg" alt="Logo BNEX" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Site institucional</span>
+              <span class="project__index">02</span>
+            </div>
+            <h3 class="project__title">BNEX</h3>
+            <p class="project__text">Site institucional para sportstech que une ciência do esporte e machine learning para prevenir lesões e orientar treinos de atletas de alto rendimento.</p>
+            <span class="project__cta">Ver case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 3. Dizcoteka -->
+        <article class="project glass reveal spotlight" data-category="site" style="--hue: 320">
+          <a class="project__link" href="https://gotech-one.vercel.app/cases/dizcoteka" target="_blank" rel="noopener noreferrer" aria-label="Ver case: Dizcoteka (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>gotech / dizcoteka</em></div>
+            <img class="project__logo" src="assets/logos/dizcoteka.png" alt="Logo Dizcoteka" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">E-commerce</span>
+              <span class="project__index">03</span>
+            </div>
+            <h3 class="project__title">Dizcoteka</h3>
+            <p class="project__text">E-commerce de moda festa focado em conversão, com navegação inteligente por ocasião e tipo de peça e integração direta com WhatsApp.</p>
+            <span class="project__cta">Ver case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 4. MEMO -->
+        <article class="project project--wide glass reveal spotlight" data-category="sistema" style="--hue: 262">
+          <a class="project__link" href="https://gotech-one.vercel.app/cases/memo" target="_blank" rel="noopener noreferrer" aria-label="Ver case: MEMO (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>gotech / memo</em></div>
+            <img class="project__logo" src="assets/logos/memo.svg" alt="Logo MEMO" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Sistema · CRM</span>
+              <span class="project__index">04</span>
+            </div>
+            <h3 class="project__title">MEMO</h3>
+            <p class="project__text">Sistema sob medida para produtora de vídeos de casamento: CRM comercial e de operação, geração automática de contratos e DRE calculada sem planilhas.</p>
+            <ul class="metrics" aria-label="Resultados">
+              <li><strong>+30</strong><span>casamentos gerenciados</span></li>
+              <li><strong>Auto</strong><span>contratos e DRE</span></li>
+              <li><strong>Escala</strong><span>e economia de tempo</span></li>
+            </ul>
+            <span class="project__cta">Ver case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 5. Refúgios Pedra Azul -->
+        <article class="project glass reveal spotlight" data-category="site" style="--hue: 172">
+          <a class="project__link" href="https://gotech-one.vercel.app/cases/refugios-pedra-azul" target="_blank" rel="noopener noreferrer" aria-label="Ver case: Refúgios Pedra Azul (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>gotech / refugios</em></div>
+            <img class="project__logo project__logo--plate" src="assets/logos/refugios-pedra-azul.png" alt="Logo Refúgios Pedra Azul" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Landing page</span>
+              <span class="project__index">05</span>
+            </div>
+            <h3 class="project__title">Refúgios Pedra Azul</h3>
+            <p class="project__text">Landing page de alta conversão para curadoria de terrenos urbanos de alto padrão, transmitindo credibilidade e focada na captação de clientes.</p>
+            <span class="project__cta">Ver case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 6. Vallorem -->
+        <article class="project glass reveal spotlight" data-category="site" style="--hue: 40">
+          <a class="project__link" href="https://gotech-one.vercel.app/cases/vallorem" target="_blank" rel="noopener noreferrer" aria-label="Ver case: Vallorem (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>gotech / vallorem</em></div>
+            <img class="project__logo" src="assets/logos/vallorem.png" alt="Logo Vallorem Assessoria Empresarial" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Landing page</span>
+              <span class="project__index">06</span>
+            </div>
+            <h3 class="project__title">Vallorem</h3>
+            <p class="project__text">Landing page estratégica para escritório de contabilidade em operação desde 2009, unindo processos digitais à consultoria dedicada.</p>
+            <span class="project__cta">Ver case <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 7. Transcapixaba -->
+        <article class="project glass reveal spotlight" data-category="site" style="--hue: 12">
+          <a class="project__link" href="https://transcapixabahikeandfly.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar site: Transcapixaba Hike &amp; Fly (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>transcapixabahikeandfly.com.br</em></div>
+            <img class="project__logo project__logo--tall" src="assets/logos/transcapixaba.png" alt="Logo Transcapixaba Hike &amp; Fly" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Site institucional</span>
+              <span class="project__index">07</span>
+            </div>
+            <h3 class="project__title">Transcapixaba</h3>
+            <p class="project__text">Site institucional de alta performance para a Transcapixaba Hike &amp; Fly.</p>
+            <span class="project__cta">Visitar site <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 8. Viofilme (Sistema) -->
+        <article class="project project--wide glass reveal spotlight" data-category="sistema" style="--hue: 225">
+          <a class="project__link" href="https://www.viofilme.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar: Viofilme Sistema (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>viofilme.com.br</em></div>
+            <img class="project__logo" src="assets/logos/viofilme.svg" alt="Logo Viofilme" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Sistema · CRM</span>
+              <span class="project__index">08</span>
+            </div>
+            <h3 class="project__title">Viofilme — Sistema</h3>
+            <p class="project__text">Sistema operacional completo criado para agência de marketing, com foco em gestão de CRM e em centralizar toda a operação em um só lugar.</p>
+            <ul class="metrics" aria-label="Destaques">
+              <li><strong>CRM</strong><span>gestão comercial</span></li>
+              <li><strong>360°</strong><span>operação da agência</span></li>
+              <li><strong>Sob medida</strong><span>para o processo</span></li>
+            </ul>
+            <span class="project__cta">Visitar sistema <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 9. Agência Viofilme -->
+        <article class="project glass reveal spotlight" data-category="site" style="--hue: 285">
+          <a class="project__link" href="https://www.agenciaviofilme.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar site: Agência Viofilme (abre em nova aba)"></a>
+          <div class="project__preview">
+            <div class="project__browser"><span></span><span></span><span></span><em>agenciaviofilme.com.br</em></div>
+            <img class="project__logo" src="assets/logos/viofilme.svg" alt="Logo Agência Viofilme" loading="lazy" />
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="tag">Site institucional</span>
+              <span class="project__index">09</span>
+            </div>
+            <h3 class="project__title">Agência Viofilme</h3>
+            <p class="project__text">Desenvolvimento de site institucional moderno e performático para a agência.</p>
+            <span class="project__cta">Visitar site <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section container" id="contato" aria-labelledby="contato-title">
+      <div class="cta glass reveal spotlight">
+        <div class="cta__glow" aria-hidden="true"></div>
+        <p class="section__kicker">04 — Contato</p>
+        <h2 class="cta__title" id="contato-title">Tem um projeto em mente?<br /><span class="gradient-text">Vamos construir juntos.</span></h2>
+        <p class="cta__text">Seja um agente de IA, um sistema para organizar a sua operação ou um site que converte — me chama e a gente conversa sobre a melhor solução para o seu negócio.</p>
+        <div class="cta__actions">
+          <a href="https://wa.me/5527988171917?text=Ol%C3%A1%2C%20Guilherme!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg magnetic">
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            Chamar no WhatsApp
+          </a>
+          <a href="mailto:gui.borborema.it@gmail.com" class="btn btn--glass btn--lg magnetic">
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Enviar e-mail
+          </a>
+        </div>
+
+        <ul class="channels">
+          <li>
+            <a class="channel" href="mailto:gui.borborema.it@gmail.com">
+              <span class="channel__label">E-mail</span>
+              <span class="channel__value">gui.borborema.it<wbr>@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a class="channel" href="https://wa.me/5527988171917?text=Ol%C3%A1%2C%20Guilherme!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">
+              <span class="channel__label">WhatsApp</span>
+              <span class="channel__value">(27) 98817-1917</span>
+            </a>
+          </li>
+          <li>
+            <a class="channel" href="https://www.linkedin.com/in/guilherme-borborema/" target="_blank" rel="noopener noreferrer">
+              <span class="channel__label">LinkedIn</span>
+              <span class="channel__value">/in/guilherme-borborema</span>
+            </a>
+          </li>
+          <li>
+            <a class="channel" href="https://www.instagram.com/guilherme_borborema/" target="_blank" rel="noopener noreferrer">
+              <span class="channel__label">Instagram</span>
+              <span class="channel__value">@guilherme_borborema</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© <span data-year>2026</span> Guilherme Borborema. Feito com código e café.</p>
+    <ul class="footer__social">
+      <li><a href="mailto:gui.borborema.it@gmail.com">E-mail</a></li>
+      <li><a href="https://wa.me/5527988171917?text=Ol%C3%A1%2C%20Guilherme!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      <li><a href="https://www.linkedin.com/in/guilherme-borborema/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/guilherme_borborema/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="#inicio">Voltar ao topo ↑</a></li>
+    </ul>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5527988171917?text=Ol%C3%A1%2C%20Guilherme!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.93 9.93 0 0 0-8.53 15.02L2 22l5.1-1.46A9.94 9.94 0 1 0 12.04 2zm5.8 14.1c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.26-.29.57-.36.77-.36h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.2-.14.31-.29.48-.14.17-.3.38-.43.5-.14.15-.29.3-.13.59.17.29.74 1.22 1.58 1.97 1.09.97 2 1.27 2.29 1.41.29.15.46.12.62-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.37z"/></svg>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
