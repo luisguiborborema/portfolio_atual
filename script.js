@@ -201,14 +201,56 @@
     });
   });
 
-  /* ---------- TikTok Pixel: cliques de contato viram evento "Contact" ---------- */
+  /* ---------- TikTok: pixel (navegador) + Events API (servidor) ---------- */
+  // Os dois recebem o mesmo event_id, e o TikTok descarta a cópia duplicada.
+  const isLiveSite = /(^|\.)guilhermeborborema\.com\.br$/.test(location.hostname);
+
+  const ttclid = new URLSearchParams(location.search).get("ttclid");
+  if (ttclid) {
+    // guarda o clique do anúncio para atribuir conversões em outras páginas
+    document.cookie = `ttclid=${encodeURIComponent(ttclid)}; max-age=${60 * 60 * 24 * 7}; path=/; SameSite=Lax; Secure`;
+  }
+
+  const trackTikTok = (eventName, properties = {}) => {
+    const eventId = `${eventName}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+
+    if (typeof window.ttq?.track === "function") {
+      window.ttq.track(eventName, properties, { event_id: eventId });
+    }
+    if (!isLiveSite) return;
+
+    const payload = JSON.stringify({
+      event: eventName,
+      event_id: eventId,
+      url: location.href,
+      referrer: document.referrer,
+      properties,
+    });
+    const sent = navigator.sendBeacon?.("/api/tiktok-event", new Blob([payload], { type: "application/json" }));
+    if (!sent) {
+      fetch("/api/tiktok-event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+        keepalive: true,
+      }).catch(() => {});
+    }
+  };
+
+  // Cliques de contato
   document.addEventListener("click", (event) => {
     const link = event.target.closest('a[href^="https://wa.me"], a[href^="mailto:"]');
-    if (!link || typeof window.ttq?.track !== "function") return;
-    window.ttq.track("Contact", {
-      content_name: link.href.startsWith("mailto:") ? "email" : "whatsapp",
-    });
+    if (!link) return;
+    trackTikTok("Contact", { content_name: link.href.startsWith("mailto:") ? "email" : "whatsapp" });
   });
+
+  // Visualização de um case
+  if (document.body.classList.contains("case-page")) {
+    trackTikTok("ViewContent", {
+      content_id: location.pathname.split("/").pop().replace(/\.html$/, ""),
+      content_name: document.querySelector("h1")?.textContent.trim(),
+    });
+  }
 
   /* ---------- Efeitos de ponteiro (apenas desktop) ---------- */
   if (!hasFinePointer || prefersReducedMotion) return;
