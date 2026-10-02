@@ -201,6 +201,15 @@
     });
   });
 
+  /* ---------- TikTok Pixel: cliques de contato viram evento "Contact" ---------- */
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="https://wa.me"], a[href^="mailto:"]');
+    if (!link || typeof window.ttq?.track !== "function") return;
+    window.ttq.track("Contact", {
+      content_name: link.href.startsWith("mailto:") ? "email" : "whatsapp",
+    });
+  });
+
   /* ---------- Efeitos de ponteiro (apenas desktop) ---------- */
   if (!hasFinePointer || prefersReducedMotion) return;
 

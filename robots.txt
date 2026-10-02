@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guilhermeborborema.com.br/sitemap.xml
+Sitemap: https://www.guilhermeborborema.com.br/sitemap.xml
